@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!-- saved from url=(0077)http://localhost:63342/untitled4/9.1%E9%94%AE%E7%9B%98%E4%BA%8B%E4%BB%B6.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Title</title>
+</head>
+<body>
+
+<input type="text">
+<button>走一哈</button>
+<ul><li>sadfsadfsadf</li><li></li></ul>
+
+
+<script>
+//    e.type(事件类型)
+//    A65
+//    a97
+//    左37
+//    上38
+//    右39
+//    下40
+//    空格32
+//    回车13
+//    验证三键有没有被按下
+//    altkey
+//    shiftkey;
+//    ctrlkey
+//    对于表单内容的值就是value
+    var text=document.querySelector(`input`);
+    var btn=document.querySelector(`button`);
+    var ul=document.querySelector(`ul`)
+    btn.onclick=function(){
+        var li=document.createElement(`li`);
+        li.innerHTML=text.value
+        ul.appendChild(li);
+        text.value=``;
+    };
+    text.onkeyup=function(e){
+        if(e.ctrlKey & e.keyCode==13){
+            var li=document.createElement(`li`);
+            li.innerHTML=text.value
+            ul.appendChild(li);
+            text.value=``;
+        }
+    }
+
+    console.log(btn);
+
+
+
+
+
+
+
+</script></body></html>

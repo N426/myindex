@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!-- saved from url=(0077)http://localhost:63342/untitled4/9.1%E9%94%AE%E7%9B%98%E4%BA%8B%E4%BB%B6.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Title</title>
+</head>
+<body>
+<h5>一共40个字，已经8个字，还有32个字</h5>
+<input type="text">
+<button>走一哈</button>
+<ul><li>adsaDSa</li><li>asdAD</li><li>AdadsADSads</li><li>dksfjdfjsdlkfjlsdkfjlskdfjlskdflksjdflka</li><li>sdkjfskdfjlskdflkjsdlfkjslkdfjlskdjflskd</li><li>dskjfaskdfkasjdfkjdsfkjsdfkjsdkfjskdjfks</li><li>dsdfasdfasdddddddddddddddddddddddddddddd</li></ul>
+
+
+<script>
+//    e.type(事件类型)
+//    A65
+//    a97
+//    左37
+//    上38
+//    右39
+//    下40
+//    空格32
+//    回车13
+//    验证三键有没有被按下
+//    altkey
+//    shiftkey;
+//    ctrlkey
+//    对于表单内容的值就是value
+    var text=document.querySelector(`input`);
+    var btn=document.querySelector(`button`);
+    var ul=document.querySelector(`ul`);
+    var h=document.querySelector(`h5`);
+    btn.onclick=function(){
+        if (text.value==``){
+            return;
+        }
+        var li=document.createElement(`li`);
+        li.innerHTML=text.value
+        ul.appendChild(li);
+        text.value=``;
+        h.innerHTML=`一共40个字，已经0个字，还有40个字`
+    };
+    text.onkeyup=function(e){
+        if(e.ctrlKey && e.keyCode==13){
+            btn.onclick()
+        }
+        var len=text.value.length;
+        h.innerHTML=`一共40个字，已经${len}个字，还有${40-len}个字`;
+        if (len>=40){
+            text.value=text.value.substr(0,40);
+        }
+    };
+
+
+
+    console.log(btn);
+
+
+
+
+
+
+
+</script></body></html>
